@@ -1,52 +1,73 @@
-<p align="center">Saliec burtus pareizā secībā</p>
-                    
-                    
-                    
-                   <!-- <div class="center_Middle">
-                        <div class="block">A</div>
-                        <div class="block">C</div>
-                        <div class="block">D</div>
-                        <div class="block">E</div>
-                        <div class="block">Z</div>-->
-                        
-                    </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sajaukto burtu spēle</title>
+    <link href="style.css" rel="stylesheet"/> 
+</head>
+<body>
+<div id="otrs">
+<h1>Saliec burtus pareizā secībā!</h1>
+</div>
                     <div class="sajaukts">Šeit būs sajauktais vārds</div>  
-                        <input class = "atbilde"/>         <!--atbilde vajag centrā,lielāku,citu fontu-->
-                        
+                    <form style="text-align: center; ">
+                    <input class = "atbilde"/>
+                        <br>
+                        <br>
                         <button onclick="parbaudit()">Pārbaudīt atbildi</button>
                         <script>
-                            let vardi_1=['koks','kods','koks','kods','koks','kods','koks','kods','koks','kods']
-                            let vardi_s=['sokk','doks','sokk','doks','sokk','doks','sokk','doks','sokk','doks']    
-
-                            let randomNr = Math.random()*10
+                            let vardi_1=['varavīksne','zizlis','banāni','monitors','lineāls','datorpele','pikselis','čemodāns','krēsls','aparāts']
+                            let vardi_s=['ksnevaravī','lizisz','anānbi','iomonrts','inlālse','olerpdate','elispiks','ānočemds','ēslkrs','aāptars']    
+                            
+                            setInterval(skaititLaiku, 2000)
+                            let randomNr
+                            function skaititLaiku () {
+                                console.log('skaititjas ir palaists')
+                            }
+                            function izveletiesVardu() {
+                            randomNr = Math.random()*10
                             randomNr = Math.ceil(randomNr)
                             randomNr = randomNr-1
 
-                            document.querySelector(".sajaukts").innerHTML=vardi_s[randomNr]+','+randomNr
+                            document.querySelector(".sajaukts").innerHTML=vardi_s[randomNr]
+                            document.querySelector('.atbilde').value=''
+                        }
+
+                            izveletiesVardu()
+
                             function parbaudit(){
                                 let atbilde = document.querySelector('.atbilde').value;
                                 if(atbilde == vardi_1[randomNr])
                                 {
                                     alert('Pareizi!')
+                                    izveletiesVardu()
                                 }//beidzas if
-                              
+                                else {
+                                    alert('Nepareizi')
+                                }
                             }//beidzas parbaudit()
 
                             function sajauktVardu(vards) {
-                                console.log('sajauktVardu() palaists')
-                                console.log('sajaukšanai = '+vards)
 
+                                let vardsIzjauksanai = vards.split('')
                                 let vardaGarums = vards.length
                                 let loopIndex = 0
                                 let sajauktsVards = []
 
                                 while(loopIndex!=vardaGarums) {
-                                    console.log(vards[loopIndex])
-                                    let randomIndex=Math.floor(Math.random()*vardaGarums)
-                                    sajauktsVards.push(vards[randomIndex])
+                                    //console.log(vards[loopIndex])
+
+                                    let randomIndex=Math.floor(Math.random()*vardsIzjauksanai.length)
+                                    
+                                    sajauktsVards.push(vardsIzjauksanai[randomIndex])
+                                    vardsIzjauksanai.splice(randomIndex,1)
                                     loopIndex++
                                 }
-                                console.log(sajauktsVards)
+                                //console.log(sajauktsVards)
+                                sajauktsVards = sajauktsVards.join('')
+                                return sajauktsVards
                             }
                                 
                                 

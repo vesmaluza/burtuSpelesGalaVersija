@@ -41,4 +41,33 @@ ul,li {
     vertical-align: middle;
 }
 
+#otrs{
+    text-align:center;
+    font-family:monospace;
+}
 
+.sajaukts{
+    background-color: rgb(225, 225, 225);
+    height: 100px;
+    width: 100%;
+    font-family:monospace;
+    font-size:55px;
+    text-align:center;
+}
+.atbilde {
+    font-size: 22px;
+    padding: 21px 32px;
+    text-align: center;
+    font-family:monospace;
+
+}
+
+button {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 21px 32px;
+    text-align: center;
+    font-size: 22px;
+    font-family:monospace;
+  }
