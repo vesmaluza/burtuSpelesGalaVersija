@@ -1,0 +1,44 @@
+.wrapper{
+   
+    height: 550px;
+}
+
+
+.header{
+    text-align: center;
+    
+    height: 75px;
+    font-family: monospace;
+}
+ul,li {
+    text-align: center;
+    font-family: monospace;
+    font-size: 25px;
+    display:inline-block;
+} 
+
+
+.block{
+    display:inline-block;
+    background: #eff7f7;
+    width: 100px;
+    height: 100px;
+    border: 1px solid black;
+    
+}
+.virsraksts{
+    font-family:monospace;
+}
+
+.content {
+    font-family:monospace;
+    text-align:center;
+    font-size:20px;
+}
+
+.center_Middle{
+    text-align: center;
+    vertical-align: middle;
+}
+
+

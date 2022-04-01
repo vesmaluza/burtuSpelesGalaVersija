@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link href="style.css" rel="stylesheet"/> 
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sajauktie burti</title>
+</head>
+<body>
+  <div class="wrapper">
+        <div class="header">
+                    <h1>SAJAUKTIE BURTI</h1>
+                <ul>
+                        <li><a href="spele.html">SPĒLE</a></li >
+                        <li><a href="pspele.html">NOTEIKUMI</a></li>
+                        <li><a href="topins.html">TOP</a></li>
+                        <li><a href="parautoru.html">KONTAKTI</a></li>
+                </ul>
+                    </div>
+                    <br>
+                    <br>
+                    <div class="content">
+                        <h3 class="virsraksts">IEVADI DATUS PAR SEVI, LAI PIEVIENOTU TOPAM</h3>
+                      Vārds: <input id ="vards"/>
+                      <br />
+                      Vecums: <input id="vecums"/>
+                    <br />
+                        Reģions:
+                        <select id="regions">
+        
+                            <option value="Vidzeme">Vidzeme</option>
+                            <option value="Latgale">Latgale</option>
+                            <option value="Kurzeme">Kurzeme</option>
+                            <option value="Zemgale">Zemgale</option>>
+                        </select>
+                            <button onclick="saktSpeli()">Sākt</button>
+                        </div>
+                    </div>
+                            <script>
+                            
+                                function saktSpeli()
+                                {
+                                    let vards = document.querySelector('#vards').value//meklē dokumentā to, kam ID ir vārds
+                                   //querySelector vietā var raksīt getElementByID
+                                   let vecums = document.querySelector('#vecums').value
+                                   let regions = document.querySelector('#regions').value
+                                   console.log(vards+" "+ vecums+ " "+regions)//pārbauda vai ir veiksmigs kods
+                                   
+                                   if(vards == "") 
+                                   {
+                                       alert("Ievadi vārdu!")
+                                   }
+                                   else
+                                   {
+                                       window.location="spele.html#"+vards+","+vecums+","+regions //ja vards ir ievadits, aizsutit uz nakamo lapu  
+                                  //#norāda, ka meklēs kaut ko citu nevis faila nosaukumu
+                                  //atver lapu un piliec klaat vardu, kas ielikts laukumaa(to parāda adrese)
+                       
+                                       
+                                   }
+                               }
+                    </script>        
+            </body>
+    </html>

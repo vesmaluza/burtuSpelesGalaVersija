@@ -1,0 +1,61 @@
+<p align="center">Saliec burtus pareizā secībā</p>
+                    
+                    
+                    
+                   <!-- <div class="center_Middle">
+                        <div class="block">A</div>
+                        <div class="block">C</div>
+                        <div class="block">D</div>
+                        <div class="block">E</div>
+                        <div class="block">Z</div>-->
+                        
+                    </div>
+                    <div class="sajaukts">Šeit būs sajauktais vārds</div>  
+                        <input class = "atbilde"/>         <!--atbilde vajag centrā,lielāku,citu fontu-->
+                        
+                        <button onclick="parbaudit()">Pārbaudīt atbildi</button>
+                        <script>
+                            let vardi_1=['koks','kods','koks','kods','koks','kods','koks','kods','koks','kods']
+                            let vardi_s=['sokk','doks','sokk','doks','sokk','doks','sokk','doks','sokk','doks']    
+
+                            let randomNr = Math.random()*10
+                            randomNr = Math.ceil(randomNr)
+                            randomNr = randomNr-1
+
+                            document.querySelector(".sajaukts").innerHTML=vardi_s[randomNr]+','+randomNr
+                            function parbaudit(){
+                                let atbilde = document.querySelector('.atbilde').value;
+                                if(atbilde == vardi_1[randomNr])
+                                {
+                                    alert('Pareizi!')
+                                }//beidzas if
+                              
+                            }//beidzas parbaudit()
+
+                            function sajauktVardu(vards) {
+                                console.log('sajauktVardu() palaists')
+                                console.log('sajaukšanai = '+vards)
+
+                                let vardaGarums = vards.length
+                                let loopIndex = 0
+                                let sajauktsVards = []
+
+                                while(loopIndex!=vardaGarums) {
+                                    console.log(vards[loopIndex])
+                                    let randomIndex=Math.floor(Math.random()*vardaGarums)
+                                    sajauktsVards.push(vards[randomIndex])
+                                    loopIndex++
+                                }
+                                console.log(sajauktsVards)
+                            }
+                                
+                                
+                                
+                                
+                                
+                                
+                                </script>
+                        
+                        
+                        </body>
+                        </html>
