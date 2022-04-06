@@ -8,24 +8,43 @@
     <link href="style.css" rel="stylesheet"/> 
 </head>
 <body>
-<div id="otrs">
-<h1>Saliec burtus pareizā secībā!</h1>
-</div>
+
+<div class="wrapper">
+    <div class="header">
+
+                        
+                    <div class="topnav">
+                      <li><a href="spele.html">SPĒLE</a></li> 
+                      <li><a href="noteikumi.html">NOTEIKUMI</a></li>
+                        <li><a href="tops.html">TOP</a></li>
+                        <li><a href="parautoru.html">KONTAKTI</a></li>
+               </div>
+                    </div>
+                    <div id="otrs">
+                        <h1>Saliec burtus pareizā secībā!</h1>
+                        </div>
                     <div class="sajaukts">Šeit būs sajauktais vārds</div>  
                     <form style="text-align: center; ">
                     <input class = "atbilde"/>
                         <br>
                         <br>
                         <button onclick="parbaudit()">Pārbaudīt atbildi</button>
-                        <script>
+                        <button><a href="tops.html">Viss, eju uz top</a></button>
+                     <script>
+                            laiks = 0;
                             let vardi_1=['varavīksne','zizlis','banāni','monitors','lineāls','datorpele','pikselis','čemodāns','krēsls','aparāts']
                             let vardi_s=['ksnevaravī','lizisz','anānbi','iomonrts','inlālse','olerpdate','elispiks','ānočemds','ēslkrs','aāptars']    
-                            
-                            setInterval(skaititLaiku, 2000)
-                            let randomNr
+
+
+                           setInterval(skaititLaiku, 1000)
+                           let randomNr
                             function skaititLaiku () {
-                                console.log('skaititjas ir palaists')
-                            }
+                               console.log('laiks iet')
+                           }
+                           //visu laiku atkārto, bet vajag, lai pēc 10 atminētiem vārdiem apstājas
+                           //punktu skaitīšana - par katru burtu 5 punkti
+
+
                             function izveletiesVardu() {
                             randomNr = Math.random()*10
                             randomNr = Math.ceil(randomNr)

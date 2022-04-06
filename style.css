@@ -1,21 +1,45 @@
+body{
+    font-family:monospace;
+    background-color: #f2f2f2;
+}
 .wrapper{
-   
-    height: 550px;
-}
-
-
-.header{
     text-align: center;
-    
-    height: 75px;
-    font-family: monospace;
+    height: 550px;
+ 
 }
+
+.topnav  a {
+    position: relative;
+    background-color: #333;
+    overflow: hidden;
+    float: left;
+    color: #f2f2f2;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+
 ul,li {
     text-align: center;
-    font-family: monospace;
     font-size: 25px;
     display:inline-block;
 } 
+a:link, a:visited {
+    background-color: white;
+    color: black;
+    border: 2px solid green;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+  }
+  
+  a:hover, a:active {
+    background-color: green;
+    color: white;
+  }
 
 
 .block{
@@ -26,12 +50,8 @@ ul,li {
     border: 1px solid black;
     
 }
-.virsraksts{
-    font-family:monospace;
-}
 
 .content {
-    font-family:monospace;
     text-align:center;
     font-size:20px;
 }
@@ -43,14 +63,12 @@ ul,li {
 
 #otrs{
     text-align:center;
-    font-family:monospace;
 }
 
 .sajaukts{
     background-color: rgb(225, 225, 225);
     height: 100px;
     width: 100%;
-    font-family:monospace;
     font-size:55px;
     text-align:center;
 }
@@ -58,16 +76,34 @@ ul,li {
     font-size: 22px;
     padding: 21px 32px;
     text-align: center;
-    font-family:monospace;
-
 }
 
 button {
-    background-color: #4CAF50; /* Green */
+    background-color: #ddd;
     border: none;
-    color: white;
-    padding: 21px 32px;
+    color: black;
+    padding: 16px 32px;
     text-align: center;
-    font-size: 22px;
+    font-size: 16px;
+    margin: 4px 2px;
+    transition: 0.3s;
     font-family:monospace;
   }
+  
+button:hover {
+    background-color: #3e8e41;
+    color: white;
+}
+
+table
+  {
+      width: 60%;
+      margin-left: auto;
+      margin-right: auto;
+
+  }
+  td,th
+  {
+      border:1px solid rgb(119, 119, 119);
+  }
+
