@@ -1,6 +1,7 @@
 body{
     font-family:monospace;
     background-color: #f2f2f2;
+    text-align:center;
 }
 .wrapper{
     text-align: center;
@@ -60,20 +61,20 @@ a:link, a:visited {
     text-align: center;
     vertical-align: middle;
 }
-
-#otrs{
-    text-align:center;
+#izvade {
+    font-size:20px;
 }
 
+
 .sajaukts{
-    background-color: rgb(225, 225, 225);
+    
     height: 100px;
     width: 100%;
-    font-size:55px;
+    font-size:45px;
     text-align:center;
 }
 .atbilde {
-    font-size: 22px;
+    font-size:15px;
     padding: 21px 32px;
     text-align: center;
 }
@@ -106,4 +107,3 @@ table
   {
       border:1px solid rgb(119, 119, 119);
   }
-

@@ -5,10 +5,12 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sajaukto burtu spēle</title>
+
     <link href="style.css" rel="stylesheet"/> 
 </head>
-<body>
 
+    <body onload="startTime()   ">
+        <p id="demo"></p>
 <div class="wrapper">
     <div class="header">
 
@@ -21,29 +23,73 @@
                </div>
                     </div>
                     <div id="otrs">
-                        <h1>Saliec burtus pareizā secībā!</h1>
+                        <h2>Saliec burtus pareizā secībā!</h2>
                         </div>
-                    <div class="sajaukts">Šeit būs sajauktais vārds</div>  
-                    <form style="text-align: center; ">
-                    <input class = "atbilde"/>
+                    <div class="sajaukts">Šeit būs sajauktais vārds</div> <input class = "atbilde"/> 
+                        <button type='button' onclick="parbaudit()">Pārbaudīt atbildi</button> 
+                        
                         <br>
                         <br>
-                        <button onclick="parbaudit()">Pārbaudīt atbildi</button>
-                        <button><a href="tops.html">Viss, eju uz top</a></button>
+                        Laiks:
+                    <canvas id="sekundes" width="400" height="30"
+                    style="background-color: rgb(226, 216, 216);">
+                    </canvas>
+                    
+                    <p id = "izvade">
+                   
+                        <br>
+                    <button type='button' onclick="taimeris()">
+                        Sākt
+                      </button>
+                        <p id="izvade"></p>
+                    <br>
+           </p>
+                      
+                    </p>
+                    <p>
+                   
+                    </p>
+                        <br>
                      <script>
-                            laiks = 0;
                             let vardi_1=['varavīksne','zizlis','banāni','monitors','lineāls','datorpele','pikselis','čemodāns','krēsls','aparāts']
                             let vardi_s=['ksnevaravī','lizisz','anānbi','iomonrts','inlālse','olerpdate','elispiks','ānočemds','ēslkrs','aāptars']    
+                            let timeout;
+                            var c = document.getElementById("sekundes");
+                            var s = c.getContext("2d");
+                            var laiks;
+                            var punkti;
+                           //}
+                           //minēt vārdus 1 min
+                           //parādīt cik vārdi uzminēti pēc iepsējas īsakā laikā
+                      
 
+                           function taimeris() {
+                            
+                            laiks = 60;
+                            n = 400 / laiks;
+                            s.clearRect(0, 0, 400, 30);
+                            s.fillRect(0, 0, 400, 30);
+                            var izpildit = setInterval(function(){
+                                if (laiks > 0) {
+                                laiks = laiks - 1;
+                                }
+                                s.clearRect(0, 0, 400, 30);
+                                s.fillRect(0, 0, n * laiks, 30);
+                                izvade.innerHTML = laiks; 
+                                if (laiks == 0) {
+                                    alert('Laiks beidzies!')
+                                clearInterval(izpildit);
+                                } 
+                            } 
+                            , 1000);
 
-                           setInterval(skaititLaiku, 1000)
-                           let randomNr
-                            function skaititLaiku () {
-                               console.log('laiks iet')
-                           }
-                           //visu laiku atkārto, bet vajag, lai pēc 10 atminētiem vārdiem apstājas
-                           //punktu skaitīšana - par katru burtu 5 punkti
+                        }
 
+                           function startTime() {
+                            const date = new Date();
+                             document.getElementById("demo").innerHTML = date.toLocaleTimeString();
+                                setTimeout(function() {startTime()}, 1000);
+                            }
 
                             function izveletiesVardu() {
                             randomNr = Math.random()*10
@@ -60,13 +106,21 @@
                                 let atbilde = document.querySelector('.atbilde').value;
                                 if(atbilde == vardi_1[randomNr])
                                 {
-                                    alert('Pareizi!')
                                     izveletiesVardu()
+                                    alert('Pareizi!')
+                                    
+                                    
+                                    
                                 }//beidzas if
                                 else {
                                     alert('Nepareizi')
                                 }
                             }//beidzas parbaudit()
+                            
+        
+
+
+
 
                             function sajauktVardu(vards) {
 
@@ -89,13 +143,13 @@
                                 return sajauktsVards
                             }
                                 
+
                                 
                                 
-                                
-                                
+                         
                                 
                                 </script>
-                        
+                           <a href="index.html">Atpakaļ uz sākumu</a>
                         
                         </body>
                         </html>
