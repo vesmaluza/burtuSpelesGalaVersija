@@ -27,32 +27,27 @@
                         </div>
                     <div class="sajaukts">Šeit būs sajauktais vārds</div> <input class = "atbilde"/> 
                         <button type='button' onclick="parbaudit()">Pārbaudīt atbildi</button> 
-                        
                         <br>
-                        <br>
-                        Laiks:
-                    <canvas id="sekundes" width="400" height="30"
-                    style="background-color: rgb(226, 216, 216);">
-                    </canvas>
-                    
-                    <p id = "izvade">
-                   
-                        <br>
-                    <button type='button' onclick="taimeris()">
-                        Sākt
-                      </button>
-                        <p id="izvade"></p>
-                    <br>
-           </p>
+                        <p>
+                            <button onclick="taimeris()">
+                                Sākt
+                            </button>
+                            
+                            <p>
+                            Laiks:
+                            <canvas id="sekundes" width="400" height="30"
+                            style="border:1px solid black;
+                                    background-color: Gainsboro;">
+                            </canvas>
+                            </p>
+                            <p id = "izvade"></p>
                       
-                    </p>
-                    <p>
-                   
-                    </p>
+      
+    
                         <br>
                      <script>
-                            let vardi_1=['varavīksne','zizlis','banāni','monitors','lineāls','datorpele','pikselis','čemodāns','krēsls','aparāts']
-                            let vardi_s=['ksnevaravī','lizisz','anānbi','iomonrts','inlālse','olerpdate','elispiks','ānočemds','ēslkrs','aāptars']    
+                            let vardi_1=['varavīksne','zizlis','banāni','monitors','lineāls','datorpele','pikselis','čemodāns','krēsls','aparāts','lapa','lācis']
+                            let vardi_s=['ksnevaravī','lizisz','anānbi','iomonrts','inlālse','olerpdate','elispiks','ānočemds','ēslkrs','aāptars','pala' ,'cāils']   
                             let timeout;
                             var c = document.getElementById("sekundes");
                             var s = c.getContext("2d");
@@ -83,7 +78,7 @@
                             } 
                             , 1000);
 
-                        }
+                           }
 
                            function startTime() {
                             const date = new Date();
@@ -107,20 +102,13 @@
                                 if(atbilde == vardi_1[randomNr])
                                 {
                                     izveletiesVardu()
-                                    alert('Pareizi!')
-                                    
-                                    
-                                    
+                                    alert('Pareizi!') 
                                 }//beidzas if
                                 else {
                                     alert('Nepareizi')
                                 }
                             }//beidzas parbaudit()
                             
-        
-
-
-
 
                             function sajauktVardu(vards) {
 
