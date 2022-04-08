@@ -108,3 +108,17 @@ table
   {
       border:1px solid rgb(119, 119, 119);
   }
+
+  ul{
+      list-style-type: square;
+  }
+#topnot {
+      font-size:18px;
+      font-weight: bold;
+  }
+#noteikumi {
+     font-size:15px;
+}
+#smukiNoteikumi{
+    background-color: rgba(170, 217, 146, 0.814);
+}
