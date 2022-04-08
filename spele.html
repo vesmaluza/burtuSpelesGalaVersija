@@ -72,8 +72,10 @@
                                 s.fillRect(0, 0, n * laiks, 30);
                                 izvade.innerHTML = laiks; 
                                 if (laiks == 0) {
-                                    alert('Laiks beidzies!')
+                                    alert('Laiks beidzies! Spied OK, lai pievienotos TOP!')
+                                    window.location.assign("tops.html")
                                 clearInterval(izpildit);
+                             
                                 } 
                             } 
                             , 1000);
@@ -130,13 +132,16 @@
                                 sajauktsVards = sajauktsVards.join('')
                                 return sajauktsVards
                             }
-                                
+
+
+                             
 
                                 
                                 
                          
                                 
                                 </script>
+                             
                            <a href="index.html">Atpakaļ uz sākumu</a>
                         
                         </body>
