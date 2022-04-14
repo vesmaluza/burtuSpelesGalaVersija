@@ -19,7 +19,7 @@ let vardi_1=['varavīksne','zizlis','banāni','monitors','lineāls','datorpele',
 
                            function taimeris() {
                             
-                            laiks = 5;
+                            laiks = 60;
                             n = 400 / laiks;
                             s.clearRect(0, 0, 400, 30);
                             s.fillRect(0, 0, 400, 30);
@@ -31,8 +31,7 @@ let vardi_1=['varavīksne','zizlis','banāni','monitors','lineāls','datorpele',
                                 s.fillRect(0, 0, n * laiks, 30);
                                 izvade.innerHTML = laiks; 
                                 if (laiks == 0) {
-                                    alert('Laiks beidzies! Spied OK, lai pievienotos TOP!')
-									window.location.assign("tops.html")
+                                    alert('Laiks beidzies!')
                                 clearInterval(izpildit);
                                 } 
                             } 
@@ -107,3 +106,4 @@ let vardi_1=['varavīksne','zizlis','banāni','monitors','lineāls','datorpele',
                                 return sajauktsVards*/
                             }
                                 
+
