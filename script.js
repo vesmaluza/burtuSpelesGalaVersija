@@ -1,5 +1,15 @@
-let vardi_1=['varavīksne','zizlis','banāni','monitors','lineāls','datorpele','pikselis','čemodāns','krēsls','aparāts']
-                            let vardi_s=['ksnevaravī','lizisz','anānbi','iomonrts','inlālse','olerpdate','elispiks','ānočemds','ēslkrs','aāptars']    
+let adrese = window.location.hash;
+adrese = decodeURI(adrese);
+adrese = adrese.replace('#','');
+adrese = adrese.split(",");
+vards  = adrese[0]
+document.querySelector('.virsraksts').innerHTML = 'Sveiks, '+vards;
+
+let vecums  = adrese[1]
+let regions = adrese[2]
+
+let vardi_1=['varavīksne','zizlis','banāni','monitors','lineāls','datorpele','pikselis','čemodāns','krēsls','aparāts','brilles','tastatūra','šokolāde','ģimnāzija','čempionāts']
+                        //    let vardi_s=['ksnevaravī','lizisz','anānbi','iomonrts','inlālse','olerpdate','elispiks','ānočemds','ēslkrs','aāptars']    
                             var vardi_i=[];
                             let timeout;
                             var c = document.getElementById("sekundes");
@@ -31,7 +41,8 @@ let vardi_1=['varavīksne','zizlis','banāni','monitors','lineāls','datorpele',
                                 s.fillRect(0, 0, n * laiks, 30);
                                 izvade.innerHTML = laiks; 
                                 if (laiks == 0) {
-                                    alert('Laiks beidzies!')
+                                    alert('Laiks beidzies!Tagad vari pievienoties TOP!')
+                                    window.location.assign("tops.html")
                                 clearInterval(izpildit);
                                 } 
                             } 
@@ -49,7 +60,6 @@ let vardi_1=['varavīksne','zizlis','banāni','monitors','lineāls','datorpele',
                             randomNr = Math.random()*(size)
                             randomNr = Math.ceil(randomNr)
                             randomNr--;
-                            console.log(vardi_1[vardi_i[randomNr]]);
                             document.querySelector(".sajaukts").innerHTML=sajauktVardu(vardi_1[vardi_i[randomNr]]);
                             document.querySelector('.atbilde').value=''
                         }
@@ -61,18 +71,18 @@ let vardi_1=['varavīksne','zizlis','banāni','monitors','lineāls','datorpele',
                                 if(atbilde == vardi_1[vardi_i[randomNr]])
                                 {
                                     var rand = randomNr
-                                    console.log(vardi_i.length + ": size");
+                                   // console.log(vardi_i.length + ": size");
                                     vardi_i.splice(vardi_i[rand],1);
                                     izveletiesVardu(vardi_i.length)
                                     alert('Pareizi!')
                                     punkti++;
-                                    console.log("Punkti: " + punkti);
+                                  // console.log("Punkti: " + punkti);
                                     document.getElementById("punkti").textContent="Punkti: "+punkti;
                                         
                                 }//beidzas if
                                 else {
-                                    console.log(atbilde + " : " + vardi_1[vardi_i[randomNr]]);
-                                    console.log(vardi_i.length + " | " + randomNr + " | " + vardi_i[randomNr]);
+                                   // console.log(atbilde + " : " + vardi_1[vardi_i[randomNr]]);
+                                  // console.log(vardi_i.length + " | " + randomNr + " | " + vardi_i[randomNr]);
                                     alert('Nepareizi')
                                 }
                             }//beidzas parbaudit()
@@ -85,7 +95,7 @@ let vardi_1=['varavīksne','zizlis','banāni','monitors','lineāls','datorpele',
                             function sajauktVardu(vards) {
 
                                 var shuffled = vards.split('').sort(function(){return 0.5-Math.random()}).join('');
-                                console.log(shuffled);
+                               // console.log(shuffled);
                                 return shuffled;
                                 /*let vardsIzjauksanai = vards.split('')
                                 let vardaGarums = vards.length

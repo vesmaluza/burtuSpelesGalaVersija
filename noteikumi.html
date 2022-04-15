@@ -6,7 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noteikumi</title>
-<body>
+    <body onload="startTime()   ">
+      <p id="demo"></p>
   <div class="wrapper">
     <div class="header">
                     <h1>SAJAUKTIE BURTI</h1>
@@ -35,5 +36,12 @@
                   -Atceries - pēc iespējas īsākā laikā jāuzmin vairāk vārdu: pēc 60 sekundēm parādīsies paziņojums par spēles laika beigām!</p>
                 </div>
                 <a href="index.html">Atpakaļ uz sākumu</a>
+                <script>
+                   function startTime() {
+                            const date = new Date();
+                             document.getElementById("demo").innerHTML = date.toLocaleTimeString();
+                                setTimeout(function() {startTime()}, 1000);
+                            }
+                </script>
                   </body>
                   </html>

@@ -7,7 +7,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sākums</title>
 </head>
-<body>
+<body onload="startTime()   ">
+    <p id="demo"></p>
   <div class="wrapper">
     <div class="header">
                     <h1>SAJAUKTIE BURTI</h1>
@@ -39,6 +40,11 @@
                         </div>
                     </div>
                             <script>
+                                 function startTime() {
+                            const date = new Date();
+                             document.getElementById("demo").innerHTML = date.toLocaleTimeString();
+                                setTimeout(function() {startTime()}, 1000);
+                            }
                             
                                 function saktSpeli()
                                 {
